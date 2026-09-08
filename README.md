@@ -8,5 +8,9 @@
 - telescope
 - tree-sitter
 - mini 
-- alpha 
+- alpha
+- mason
+- conform
+- lualine
+- toggleterm
 
