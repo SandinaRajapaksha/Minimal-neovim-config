@@ -3,7 +3,7 @@
 ![Linux](https://img.shields.io/badge/Linux-%23FCC624.svg?style=for-the-badge&logo=linux&logoColor=black)
 ## A minimal neovim config with following plugins:
 - lazy ( plugin manager )
-- kanagawa ( colorscheme )
+- cyberdream ( colorscheme )
 - flash
 - telescope
 - tree-sitter

@@ -8,4 +8,4 @@ require("config.keymaps")
 require("config.lazy")
 
 -- color scheme set
-vim.cmd.colorscheme("kanagawa")
+vim.cmd.colorscheme("cyberdream")
