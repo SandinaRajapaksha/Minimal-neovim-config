@@ -12,4 +12,4 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true  
 vim.opt.termguicolors = true 
 
-
+vim.api.nvim_set_hl(0, 'MiniIndentscopeSymbol', { fg = '#5ea1ff' })
