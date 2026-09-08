@@ -12,5 +12,5 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.termguicolors = true
 vim.opt.clipboard = "unnamedplus"
-
+vim.opt.scrolloff = 10
 vim.api.nvim_set_hl(0, "MiniIndentscopeSymbol", { fg = "#5ea1ff" })
