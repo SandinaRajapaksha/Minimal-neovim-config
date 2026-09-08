@@ -15,4 +15,3 @@ return {
     { "<C-_>", "<cmd>ToggleTerm<cr>", desc = "Toggle Terminal", mode = { "n", "i", "t" } },
   },
 }
-

@@ -4,6 +4,9 @@ config = function ()
     require("mini.tabline").setup() 
     require("mini.statusline").setup() 
     require("mini.files").setup() 
+    require("mini.git").setup() 
+    require("mini.move").setup() 
+    require("mini.clue").setup() 
     vim.keymap.set("n","<leader>e",":lua MiniFiles.open()<CR>", {desc = "Open explorer"})
 end 
 }
