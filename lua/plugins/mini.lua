@@ -9,6 +9,8 @@ return {
 		require("mini.git").setup()
 		require("mini.move").setup()
 		require("mini.starter").setup()
+		require("mini.extra").setup()
+		require("mini.pick").setup()
 		require("mini.indentscope").setup({ symbol = "▏" })
 		vim.keymap.set("n", "<leader>e", ":lua MiniFiles.open()<CR>", { desc = "Open explorer" })
 	end,

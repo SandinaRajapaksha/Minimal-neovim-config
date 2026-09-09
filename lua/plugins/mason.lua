@@ -29,6 +29,7 @@ return {
 					},
 				},
 			})
+
 			-- No need to call vim.lsp.enable() - mason-lspconfig does it for you
 			-- because automatic_enable = true
 		end,
