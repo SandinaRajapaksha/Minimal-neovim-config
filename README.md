@@ -22,8 +22,9 @@ Managed with [lazy.nvim](https://github.com/folke/lazy.nvim) (auto-checks for up
 | [folke/flash.nvim](https://github.com/folke/flash.nvim) | Jump navigation (`VeryLazy`) |
 | [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) | Git gutters |
 | [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) + `nvim-web-devicons` | Statusline (`theme = auto`) |
-| [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) | Floating terminal (`size = 20`, `border = curved`) |
+| [akinsho/toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim) | Floating terminal (`direction = float`, `size = 20`, `border = curved`) |
 | [folke/which-key.nvim](https://github.com/folke/which-key.nvim) | Keymap hints (triggers on `<leader>` in `n,v`, `VeryLazy`) |
+| [mrjones2014/smart-splits.nvim](https://github.com/mrjones2014/smart-splits.nvim) | Split resize / navigate / swap |
 
 ## Structure
 
@@ -31,19 +32,20 @@ Managed with [lazy.nvim](https://github.com/folke/lazy.nvim) (auto-checks for up
 init.lua                 # leader, requires config.*, sets colorscheme
 lazy.lua                 # (root bootstrap, unused) — actual spec is lua/config/lazy.lua
 lua/config/
-  options.lua            # options
+  options.lua            # options + MiniIndentscope highlight
   keymaps.lua            # core keymaps
   autocmds.lua           # yank highlight
   lazy.lua               # lazy.nvim bootstrap + { import = "plugins" }
 lua/plugins/
   blink-cmp.lua  conform.lua  cyberdream.lua  flash.lua
   gitsigns.lua   lualine.lua  mason.lua       mini.lua
-  telescope.lua  toggleterm.lua  treesitter.lua  which-key.lua
+  smart-splits.lua  telescope.lua  toggleterm.lua
+  treesitter.lua  which-key.lua
 ```
 
 ## Options (`lua/config/options.lua`)
 
-`number` + `relativenumber`, `tabstop/shiftwidth = 4` + `expandtab`, `nowrap`, `ignorecase` + `smartcase`, `termguicolors`, `clipboard = unnamedplus`, `scrolloff = 10`, `timeoutlen = 290`.
+`number` + `relativenumber`, `tabstop/shiftwidth = 4` + `expandtab`, `nowrap`, `ignorecase` + `smartcase`, `termguicolors`, `clipboard = unnamedplus`, `scrolloff = 10`, `timeout` + `timeoutlen = 290`, `MiniIndentscopeSymbol` highlight `#5ea1ff`.
 
 Autocmd: highlight on yank (`TextYankPost`).
 
@@ -58,8 +60,9 @@ Core (`lua/config/keymaps.lua`):
 | i | `jk` | `<Esc>` |
 | n,v | `<leader>l` | `$` end of line |
 | n | `<leader>h` | `^` start of line |
-| n | `H` | Prev buffer |
-| n | `L` | Next buffer |
+| n | `H` | Prev buffer (`:bprevious`) |
+| n | `L` | Next buffer (`:bnext`) |
+| n | `<leader>v` | `:vsplit` Split vertically (defined in `smart-splits.lua`) |
 
 Plugin keys:
 
@@ -74,6 +77,10 @@ Plugin keys:
 | flash | `R` (o,x) | `flash.treesitter_search()` |
 | flash | `<C-s>` (c) | `flash.toggle()` |
 | toggleterm | `<C-/>` / `<C-_>` (n,i,t) | `ToggleTerm` |
+| smart-splits | `<A-h/j/k/l>` (n) | Resize split left/down/up/right |
+| smart-splits | `<C-h/j/k/l>` (n) | Move cursor left/down/up/right |
+| smart-splits | `<C-\>` (n) | Move to previous split |
+| smart-splits | `<leader><leader>h/j/k/l` (n) | Swap buffer left/down/up/right |
 | which-key | `<leader>?` | Buffer-local keymaps |
 | blink.cmp | `<C-space>` / `<C-e>` / `<CR>` / `<Tab>` / `<S-Tab>` / `<Up/Down>` / `<C-j/k>` / `<C-b/f>` | show docs / hide / accept / snippet fwd/bwd / select next-prev / scroll docs |
 
@@ -87,7 +94,7 @@ Plugin keys:
 
 ```sh
 # backup old config, then:
-git clone <this-repo> ~/.config/nvim
+git clone git@github.com:SandinaRajapaksha/Minimal-neovim-config.git ~/.config/nvim
 nvim  # lazy.nvim bootstraps + installs plugins automatically
 ```
 
