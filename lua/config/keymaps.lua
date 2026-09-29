@@ -1,6 +1,5 @@
 vim.keymap.set("n", "<leader>w", ":w<CR>", { desc = "Save this file" })
 vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit" })
-vim.keymap.set("n", "<leader>la", ":Lazy<CR>", { desc = "Lazy" })
 vim.keymap.set("i", "jk", "<Esc>")
 vim.keymap.set({ "n", "v" }, "<leader>l", "$")
 vim.keymap.set({ "n", "v" }, "<leader>h", "^")
