@@ -11,7 +11,7 @@ return {
 				"rust_analyzer",
 				"clangd",
 				"eslint",
-				"pyre",
+				"pyright",
 			},
 			-- auto calls vim.lsp.enable() for installed servers
 			automatic_enable = true,
